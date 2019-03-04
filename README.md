@@ -8,13 +8,13 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Installing
 
-1. Clone the repository.
-2. Open your beloved package manager and navigate to the root directory.
-3. Install dependencies
+1. Clone the repository
+2. Open your beloved package manager and navigate to the root directory
+3. Install backend dependencies
 ```
 npm install
 ```
-4. Navigate to frontend and install a few more dependencies.
+4. Navigate to frontend folder and install a few more dependencies.
 ```
 cd frontend && npm install
 ```
@@ -27,4 +27,11 @@ APIKEY=57hkj3..................
 ```
 npm run devstart
 ```
-7. Enjoy! :)
+7. Enjoy!
+
+P.S.
+There is one slight difference between the current production build and developement build. Before going for a fresh production build edit gallery.js file which is located in frontend/src/components.
+Change the 8th line from:
+  connection = new WebSocket('ws://localhost:3030/');
+to:
+  connection = new WebSocket(window.location.origin.replace(/^http/, 'ws'));
