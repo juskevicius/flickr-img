@@ -18,7 +18,7 @@ npm install
 ```
 cd frontend && npm install
 ```
-5. Return to the root directory and create a file to store the environment variables. Name it ".env". This file should contain your private Flickr API access key. Make sure to visit https://www.flickr.com/services/api/misc.api_keys.html, create an account and apply for Flickr API access key. When received, enter it to the ".env" file like this:
+5. Return to the root directory and create a file to store environment variables. Name it ".env". This file should contain your private Flickr API access key. Make sure to visit https://www.flickr.com/services/api/misc.api_keys.html, create an account and apply for Flickr API access key. When received, enter it to the ".env" file like this:
 
 ```
 APIKEY=57hkj3..................
