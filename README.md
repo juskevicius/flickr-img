@@ -30,7 +30,7 @@ npm run devstart
 7. Enjoy!
 
 P.S.
-There is one slight difference between the current production build and developement build. Before going for a fresh production build edit gallery.js file which is located in frontend/src/components.
+There is one slight difference between the current production build and development build. Before going for a fresh production build edit gallery.js file which is located in frontend/src/components.
 Change the 8th line from:
   connection = new WebSocket('ws://localhost:3030/');
 to:
