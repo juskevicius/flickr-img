@@ -1,0 +1,263 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none;
+}
+
+/* changing the default box-sizing property */
+
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+/* custom styles */
+
+$colors: (
+  flickrBlue: #0063dc,
+  flickrBlueDark: #00408f,
+  flickrPink: #ff0084,
+  backgr: #f9f9f9,
+  backgr2: #ffffff,
+  font: #595959,
+  border: #d0d3d8,
+);
+
+$main-font: 'Open Sans', sans-serif;
+
+@function color($color-name) {
+  @return map-get($colors, $color-name)
+}
+
+$tablet: 768px;
+
+@mixin tablet {
+  @media (min-width: #{$tablet}) {
+    @content
+  }
+}
+
+$desktop: 1024px;
+
+@mixin desktop {
+  @media (min-width: #{$desktop}) {
+    @content
+  }
+}
+
+$desktopLarge: 1366px;
+
+@mixin desktopLarge {
+  @media (min-width: #{$desktopLarge}) {
+    @content
+  }
+}
+
+body {
+  background-color: color(backgr);
+}
+
+.header {
+  font-size: 55px;
+  text-align: center;
+  padding: 5% 0;
+  font-family: 'Dancing Script', cursive;
+  border-top: 2px solid color(flickrPink);
+  border-bottom: 2px solid color(flickrBlue);
+  background-color: color(backgr2);
+}
+
+.card-container {
+  display: block;
+  text-align: center;
+  padding: 5%;
+  
+  .card-wrapper {
+    display: inline-table;
+    width: 1px;
+    border: 1px solid color(border);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    
+    .title-wrapper {
+      padding: 5%;
+    }
+
+    .title {
+      line-height: 25px;
+      font-size: 16px;
+      font-family: 'Open Sans', sans-serif;
+      color: color(font);
+      display: inline-block;
+      word-break: break-word;
+      margin: 0 auto;
+      text-align: center;
+    }
+  }
+
+  
+
+  @include tablet {
+
+    .card-wrapper {
+      width: 100%;
+      display: flex;
+      height: 100%;
+      align-items: stretch;
+      justify-content: center;
+      flex-direction: row;
+      border: none;
+      box-shadow: none;
+
+      .photo-container, .title-container {
+        display: flex;
+        align-items: stretch;
+      }
+
+      .title-wrapper, .photo-wrapper {
+        display: flex;
+        height: 100%;
+        align-items: center;
+        border: 1px solid color(border);
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      }
+
+      .photo-container {
+        width: 55%;
+        justify-content: flex-end;
+
+        .photo {
+          max-width: 100%; 
+        }
+      }
+
+      .title-container {
+        width: 45%;
+        justify-content: flex-start;
+
+        .title-wrapper {
+          width: 100%;
+          padding: 40px;
+          border-left: none;
+          background-color: color(backgr2);
+        }
+      }
+    }
+  }
+
+  @include desktop {
+    .card-wrapper {
+      .photo-container {
+        width: 60%;
+      }
+
+      .title-container {
+        width: 40%;
+
+        .title-wrapper {
+          max-width: 300px;
+        }
+      }
+    } 
+  }
+
+  @include desktopLarge {
+    .card-wrapper {
+      .photo-container {
+        width: 55%;
+      }
+
+      .title-container {
+        width: 45%;
+      }
+    } 
+  }
+}
+
+.sort-btn-container {
+  position: absolute;
+  right: 0;
+  padding: 4%;
+}
+
+.fixed {
+  position: fixed;
+  top: 0;
+}
+
+.sort-btn {
+  font-size: 32px;
+  color: color(font);
+  background-color: color(backgr2);
+  border-radius: 50%;
+  box-shadow: 0 0 8px color(flickrBlueDark);
+  padding: 7px 10px;
+  top: 6%;
+  right: 4%;
+}
+
+.sort-btn:hover {
+  cursor: pointer;
+  box-shadow: 0 0 18px color(flickrBlueDark);
+}
+
+.dotLoader {
+  div {
+    display: block;
+    margin: 0 auto;
+    padding: 40px;
+    div {
+      background-color: color(flickrBlue);
+    }
+  }  
+}

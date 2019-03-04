@@ -1,0 +1,240 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+  outline: none;
+}
+
+/* changing the default box-sizing property */
+html {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
+}
+
+/* custom styles */
+body {
+  background-color: #f9f9f9;
+}
+
+.header {
+  font-size: 55px;
+  text-align: center;
+  padding: 5% 0;
+  font-family: 'Dancing Script', cursive;
+  border-top: 2px solid #ff0084;
+  border-bottom: 2px solid #0063dc;
+  background-color: #ffffff;
+}
+
+.card-container {
+  display: block;
+  text-align: center;
+  padding: 5%;
+}
+
+.card-container .card-wrapper {
+  display: inline-table;
+  width: 1px;
+  border: 1px solid #d0d3d8;
+  -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+          box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.card-container .card-wrapper .title-wrapper {
+  padding: 5%;
+}
+
+.card-container .card-wrapper .title {
+  line-height: 25px;
+  font-size: 16px;
+  font-family: 'Open Sans', sans-serif;
+  color: #595959;
+  display: inline-block;
+  word-break: break-word;
+  margin: 0 auto;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .card-container .card-wrapper {
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    height: 100%;
+    -webkit-box-align: stretch;
+        -ms-flex-align: stretch;
+            align-items: stretch;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    border: none;
+    -webkit-box-shadow: none;
+            box-shadow: none;
+  }
+  .card-container .card-wrapper .photo-container, .card-container .card-wrapper .title-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: stretch;
+        -ms-flex-align: stretch;
+            align-items: stretch;
+  }
+  .card-container .card-wrapper .title-wrapper, .card-container .card-wrapper .photo-wrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    height: 100%;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    border: 1px solid #d0d3d8;
+    -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  }
+  .card-container .card-wrapper .photo-container {
+    width: 55%;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+  }
+  .card-container .card-wrapper .photo-container .photo {
+    max-width: 100%;
+  }
+  .card-container .card-wrapper .title-container {
+    width: 45%;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+  }
+  .card-container .card-wrapper .title-container .title-wrapper {
+    width: 100%;
+    padding: 40px;
+    border-left: none;
+    background-color: #ffffff;
+  }
+}
+
+@media (min-width: 1024px) {
+  .card-container .card-wrapper .photo-container {
+    width: 60%;
+  }
+  .card-container .card-wrapper .title-container {
+    width: 40%;
+  }
+  .card-container .card-wrapper .title-container .title-wrapper {
+    max-width: 300px;
+  }
+}
+
+@media (min-width: 1366px) {
+  .card-container .card-wrapper .photo-container {
+    width: 55%;
+  }
+  .card-container .card-wrapper .title-container {
+    width: 45%;
+  }
+}
+
+.sort-btn-container {
+  position: absolute;
+  right: 0;
+  padding: 4%;
+}
+
+.fixed {
+  position: fixed;
+  top: 0;
+}
+
+.sort-btn {
+  font-size: 32px;
+  color: #595959;
+  background-color: #ffffff;
+  border-radius: 50%;
+  -webkit-box-shadow: 0 0 8px #00408f;
+          box-shadow: 0 0 8px #00408f;
+  padding: 7px 10px;
+  top: 6%;
+  right: 4%;
+}
+
+.sort-btn:hover {
+  cursor: pointer;
+  -webkit-box-shadow: 0 0 18px #00408f;
+          box-shadow: 0 0 18px #00408f;
+}
+
+.dotLoader div {
+  display: block;
+  margin: 0 auto;
+  padding: 40px;
+}
+
+.dotLoader div div {
+  background-color: #0063dc;
+}
+/*# sourceMappingURL=style.css.map */
