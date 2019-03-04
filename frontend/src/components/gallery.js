@@ -5,7 +5,7 @@ import Photos from './gallery/photos';
 import Loader from './gallery/loader';
 
 export default class Gallery extends Component {
-  connection = new WebSocket(window.location.origin.replace(/^http/, 'ws'));
+  connection = new WebSocket('ws://localhost:3030/');
 
   constructor(props) {
     super(props);
