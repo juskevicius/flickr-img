@@ -1,6 +1,6 @@
-# Fetch recent photos from Flickr
+# Simple photo fetch app Powered by ReactJS+NodeJS+ExpressJS and websockets
 
-This application fetches most recent public photos from Flickr using Flickr API. Photos are displayed in one column and continuously fetched when srolling down. User is able to sort the photos by title.
+This application fetches most recent public photos from Flickr using Flickr API. Photos are displayed in one column and continuously fetched when scrolling down. User is able to sort the photos by title.
 
 ## Getting started
 
@@ -10,7 +10,7 @@ These instructions will get you a copy of the project up and running on your loc
 
 1. Clone the repository.
 2. Open your beloved package manager and navigate to the root directory.
-3. Install dependancies
+3. Install dependencies
 ```
 npm install
 ```
@@ -23,7 +23,7 @@ cd frontend && npm install
 ```
 APIKEY=57hkj3..................
 ```
-6. Lauch the app:
+6. Launch the app
 ```
 npm run devstart
 ```
